@@ -1,0 +1,19 @@
+{
+  "name": "Event24 Organizasyon",
+  "short_name": "Event24",
+  "description": "Düğün, kına, sünnet ve nişan organizasyonu",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#f8f7f5",
+  "theme_color": "#1c1714",
+  "lang": "tr-TR",
+  "dir": "ltr",
+  "icons": [
+    {
+      "src": "/favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ]
+}

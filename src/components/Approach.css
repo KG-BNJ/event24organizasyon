@@ -1,0 +1,96 @@
+.approach {
+  padding: 0 0 clamp(4rem, 9vw, 6.5rem);
+}
+
+.approach__panel {
+  position: relative;
+  margin: 0 clamp(0.75rem, 3vw, 1.5rem);
+  padding: clamp(3.8rem, 9vw, 6rem) 0;
+  color: var(--pearl);
+  overflow: hidden;
+  background:
+    radial-gradient(800px 420px at 15% 20%, rgba(196, 165, 116, 0.22), transparent 55%),
+    radial-gradient(700px 380px at 90% 80%, rgba(107, 48, 64, 0.35), transparent 50%),
+    linear-gradient(145deg, #1c1714 0%, #2a1f22 55%, #171311 100%);
+}
+
+.approach__glow {
+  position: absolute;
+  width: 420px;
+  height: 420px;
+  right: -80px;
+  top: 20%;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(196, 165, 116, 0.18), transparent 70%);
+  filter: blur(10px);
+  pointer-events: none;
+}
+
+.approach__grid {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  grid-template-columns: 0.9fr 1.1fr;
+  gap: clamp(2rem, 5vw, 4rem);
+  align-items: start;
+}
+
+.approach .section-label {
+  color: var(--champagne);
+}
+
+.approach .section-lead {
+  color: rgba(248, 247, 245, 0.72);
+}
+
+.approach__quote {
+  margin-top: 1.9rem;
+  max-width: 28rem;
+  font-family: var(--font-display);
+  font-size: clamp(1.4rem, 2.5vw, 1.85rem);
+  line-height: 1.35;
+  font-style: italic;
+  color: rgba(248, 247, 245, 0.9);
+  border-left: 2px solid var(--champagne);
+  padding-left: 1.1rem;
+}
+
+.approach__steps {
+  display: grid;
+  gap: 1.65rem;
+}
+
+.approach__steps article {
+  padding-top: 1.35rem;
+  border-top: 1px solid rgba(248, 247, 245, 0.14);
+  transition: transform 0.45s var(--ease);
+}
+
+.approach__steps article:hover {
+  transform: translateX(6px);
+}
+
+.approach__steps span {
+  display: block;
+  font-size: 0.72rem;
+  letter-spacing: 0.18em;
+  color: var(--champagne);
+  margin-bottom: 0.55rem;
+}
+
+.approach__steps h3 {
+  font-size: clamp(1.6rem, 2.5vw, 1.95rem);
+  margin-bottom: 0.5rem;
+}
+
+.approach__steps p {
+  color: rgba(248, 247, 245, 0.68);
+  max-width: 28rem;
+  line-height: 1.7;
+}
+
+@media (max-width: 860px) {
+  .approach__grid {
+    grid-template-columns: 1fr;
+  }
+}
