@@ -2,13 +2,17 @@ export const site = {
   name: 'Event24 Organizasyon',
   shortName: 'Event24',
   legalName: 'Event24 Organizasyon',
-  url: 'https://event24organizasyon.com',
+  // Canlı yayın adresi (özel domain bağlanınca burayı güncelle)
+  url: 'https://event24organizasyon.vercel.app',
   locale: 'tr_TR',
   language: 'tr-TR',
-  title: 'Düğün Organizasyonu | Event24 Organizasyon',
+  title: 'Event24 Organizasyon | Düğün, Kına ve Sünnet Organizasyonu',
   description:
-    'Event24 Organizasyon ile düğün, kına, sünnet ve nişan organizasyonu. Konsept tasarım, dekorasyon ve gün yönetimi için galeriyi inceleyin, hemen teklif alın.',
+    'Event24 Organizasyon — düğün, kına, sünnet ve nişan organizasyonu. Konsept tasarım, dekorasyon ve gün yönetimi. Galeriyi inceleyin, hemen teklif alın.',
   keywords: [
+    'Event24 Organizasyon',
+    'event24organizasyon',
+    'Event24',
     'düğün organizasyonu',
     'kına organizasyonu',
     'sünnet organizasyonu',
@@ -18,7 +22,6 @@ export const site = {
     'organizasyon şirketi',
     'düğün dekorasyonu',
     'özel gün organizasyonu',
-    'Event24 Organizasyon',
   ],
   telephoneDisplay: '+90 555 555 55 55',
   telephoneE164: '+905555555555',
@@ -28,11 +31,11 @@ export const site = {
   whatsapp: 'https://wa.me/905555555555',
   priceRange: '$$',
   themeColor: '#1c1714',
-  ogImage:
-    'https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=1200&h=630&q=80',
-  logo: 'https://event24organizasyon.com/favicon.svg',
+  ogImage: 'https://event24organizasyon.vercel.app/hero-couple.png',
+  logo: 'https://event24organizasyon.vercel.app/favicon.svg',
   areaServed: 'Türkiye',
   knowsAbout: [
+    'Event24 Organizasyon',
     'Düğün organizasyonu',
     'Kına organizasyonu',
     'Sünnet organizasyonu',

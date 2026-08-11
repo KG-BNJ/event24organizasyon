@@ -64,8 +64,8 @@ export function Hero({ ready = true }: HeroProps) {
           animate={show ? { opacity: 1, y: 0 } : undefined}
           transition={{ delay: 0.48, duration: 0.95, ease: [0.22, 1, 0.36, 1] }}
         >
-          Türkiye genelinde düğün, kına, sünnet ve nişan organizasyonu — her kutlamayı görsel bir
-          hikâyeye dönüştürüyoruz.
+          Event24 Organizasyon olarak Türkiye genelinde düğün, kına, sünnet ve nişan organizasyonu
+          yapıyoruz — her kutlamayı görsel bir hikâyeye dönüştürüyoruz.
         </motion.p>
 
         <motion.div

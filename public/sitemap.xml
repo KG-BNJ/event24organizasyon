@@ -4,14 +4,14 @@
   xmlns:image="http://www.google.com/schemas/sitemap-image/1.1"
 >
   <url>
-    <loc>https://event24organizasyon.com/</loc>
+    <loc>https://event24organizasyon.vercel.app/</loc>
     <lastmod>2026-08-11</lastmod>
-    <changefreq>weekly</changefreq>
+    <changefreq>daily</changefreq>
     <priority>1.0</priority>
     <image:image>
-      <image:loc>https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&amp;fit=crop&amp;w=1200&amp;h=630&amp;q=80</image:loc>
+      <image:loc>https://event24organizasyon.vercel.app/hero-couple.png</image:loc>
       <image:title>Event24 Organizasyon düğün organizasyonu</image:title>
-      <image:caption>Düğün, kına, sünnet ve nişan organizasyonu galerisi</image:caption>
+      <image:caption>Event24 Organizasyon — düğün, kına, sünnet ve nişan organizasyonu</image:caption>
     </image:image>
   </url>
 </urlset>

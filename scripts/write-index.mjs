@@ -1,0 +1,315 @@
+import fs from 'node:fs'
+
+const path = new URL('../index.html', import.meta.url)
+const site = {
+  name: 'Event24 Organizasyon',
+  url: 'https://event24organizasyon.vercel.app',
+  title: 'Event24 Organizasyon | Düğün, Kına ve Sünnet Organizasyonu',
+  description:
+    'Event24 Organizasyon — düğün, kına, sünnet ve nişan organizasyonu. Konsept tasarım, dekorasyon ve gün yönetimi. Galeriyi inceleyin, hemen teklif alın.',
+  keywords:
+    'Event24 Organizasyon, event24organizasyon, Event24, düğün organizasyonu, kına organizasyonu, sünnet organizasyonu, nişan organizasyonu, doğum günü organizasyonu, wedding planner, organizasyon şirketi',
+  ogImage: 'https://event24organizasyon.vercel.app/hero-couple.png',
+  logo: 'https://event24organizasyon.vercel.app/favicon.svg',
+  email: 'merhaba@event24organizasyon.com',
+  phone: '+905555555555',
+  instagram: 'https://www.instagram.com/event24organizasyon',
+}
+
+const schema = {
+  '@context': 'https://schema.org',
+  '@graph': [
+    {
+      '@type': ['LocalBusiness', 'ProfessionalService'],
+      '@id': `${site.url}/#business`,
+      name: site.name,
+      alternateName: 'Event24',
+      url: `${site.url}/`,
+      image: [site.ogImage],
+      logo: { '@type': 'ImageObject', url: site.logo },
+      description: site.description,
+      telephone: site.phone,
+      email: site.email,
+      priceRange: '$$',
+      currenciesAccepted: 'TRY',
+      address: { '@type': 'PostalAddress', addressCountry: 'TR' },
+      areaServed: { '@type': 'Country', name: 'Türkiye' },
+      sameAs: [site.instagram],
+      knowsAbout: [
+        'Event24 Organizasyon',
+        'Düğün organizasyonu',
+        'Kına organizasyonu',
+        'Sünnet organizasyonu',
+        'Nişan organizasyonu',
+        'Doğum günü organizasyonu',
+        'Konsept tasarım',
+        'Etkinlik dekorasyonu',
+        'Gün yönetimi',
+      ],
+      contactPoint: [
+        {
+          '@type': 'ContactPoint',
+          contactType: 'customer service',
+          telephone: site.phone,
+          email: site.email,
+          availableLanguage: ['Turkish'],
+          areaServed: 'TR',
+        },
+      ],
+      openingHoursSpecification: [
+        {
+          '@type': 'OpeningHoursSpecification',
+          dayOfWeek: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'],
+          opens: '09:00',
+          closes: '19:00',
+        },
+      ],
+      hasOfferCatalog: {
+        '@type': 'OfferCatalog',
+        name: 'Organizasyon Hizmetleri',
+        itemListElement: [
+          {
+            '@type': 'Offer',
+            position: 1,
+            itemOffered: {
+              '@type': 'Service',
+              name: 'Düğün Organizasyonu',
+              description:
+                'Tam kapsamlı düğün planlama, konsept tasarım, dekorasyon ve prodüksiyon hizmeti.',
+              serviceType: 'Düğün Organizasyonu',
+            },
+          },
+          {
+            '@type': 'Offer',
+            position: 2,
+            itemOffered: {
+              '@type': 'Service',
+              name: 'Kına Organizasyonu',
+              description: 'Geleneksel ve çağdaş kına gecesi konsepti, sahne ve dekorasyon.',
+              serviceType: 'Kına Organizasyonu',
+            },
+          },
+          {
+            '@type': 'Offer',
+            position: 3,
+            itemOffered: {
+              '@type': 'Service',
+              name: 'Sünnet Organizasyonu',
+              description: 'Aileye özel temalı sünnet kutlaması ve etkinlik yönetimi.',
+              serviceType: 'Sünnet Organizasyonu',
+            },
+          },
+          {
+            '@type': 'Offer',
+            position: 4,
+            itemOffered: {
+              '@type': 'Service',
+              name: 'Nişan Organizasyonu',
+              description: 'Zarif nişan ve söz organizasyonu, mekan ve masa düzeni.',
+              serviceType: 'Nişan Organizasyonu',
+            },
+          },
+          {
+            '@type': 'Offer',
+            position: 5,
+            itemOffered: {
+              '@type': 'Service',
+              name: 'Doğum Günü Organizasyonu',
+              description: 'Kişiye özel doğum günü konsepti ve kutlama organizasyonu.',
+              serviceType: 'Doğum Günü Organizasyonu',
+            },
+          },
+        ],
+      },
+    },
+    {
+      '@type': 'WebSite',
+      '@id': `${site.url}/#website`,
+      url: `${site.url}/`,
+      name: site.name,
+      inLanguage: 'tr-TR',
+      publisher: { '@id': `${site.url}/#business` },
+    },
+    {
+      '@type': 'WebPage',
+      '@id': `${site.url}/#webpage`,
+      url: `${site.url}/`,
+      name: site.title,
+      description: site.description,
+      inLanguage: 'tr-TR',
+      isPartOf: { '@id': `${site.url}/#website` },
+      about: { '@id': `${site.url}/#business` },
+    },
+    {
+      '@type': 'BreadcrumbList',
+      '@id': `${site.url}/#breadcrumb`,
+      itemListElement: [
+        { '@type': 'ListItem', position: 1, name: 'Ana Sayfa', item: `${site.url}/` },
+        { '@type': 'ListItem', position: 2, name: 'Galeri', item: `${site.url}/#galeri` },
+        { '@type': 'ListItem', position: 3, name: 'Hizmetler', item: `${site.url}/#hizmetler` },
+        { '@type': 'ListItem', position: 4, name: 'İletişim', item: `${site.url}/#iletisim` },
+      ],
+    },
+    {
+      '@type': 'FAQPage',
+      '@id': `${site.url}/#faq`,
+      mainEntity: [
+        {
+          '@type': 'Question',
+          name: 'Event24 hangi organizasyon hizmetlerini sunuyor?',
+          acceptedAnswer: {
+            '@type': 'Answer',
+            text: 'Event24 Organizasyon; düğün organizasyonu, kına organizasyonu, sünnet organizasyonu, nişan organizasyonu ve doğum günü organizasyonlarında konsept tasarım, dekorasyon ve gün yönetimi sunar.',
+          },
+        },
+        {
+          '@type': 'Question',
+          name: 'Düğün organizasyonu süreci nasıl ilerliyor?',
+          acceptedAnswer: {
+            '@type': 'Answer',
+            text: 'Süreç üç adımda ilerler: keşif görüşmesi, konsept ve tasarım onayı, ardından prodüksiyon günü yönetimi.',
+          },
+        },
+        {
+          '@type': 'Question',
+          name: 'Kına organizasyonu neleri kapsar?',
+          acceptedAnswer: {
+            '@type': 'Answer',
+            text: 'Kına organizasyonunda konsept belirleme, sahne ve dekor kurgusu, ışık atmosferi, karşılama akışı ve gün boyu koordinasyon yer alır.',
+          },
+        },
+        {
+          '@type': 'Question',
+          name: 'Teklif almak için ne yapmalıyım?',
+          acceptedAnswer: {
+            '@type': 'Answer',
+            text: 'İletişim formundan etkinlik türünüzü, tarihinizi, mekanınızı ve kısaca hayalinizi paylaşmanız yeterli.',
+          },
+        },
+        {
+          '@type': 'Question',
+          name: 'Ne kadar önceden rezervasyon yapmalıyız?',
+          acceptedAnswer: {
+            '@type': 'Answer',
+            text: 'Yoğun sezonlarda tarihlerin dolmaması için mümkün olduğunca erken, ideal olarak birkaç ay önceden iletişime geçmenizi öneririz.',
+          },
+        },
+        {
+          '@type': 'Question',
+          name: 'Hangi bölgelerde organizasyon yapıyorsunuz?',
+          acceptedAnswer: {
+            '@type': 'Answer',
+            text: 'Event24 Organizasyon Türkiye genelinde düğün, kına, sünnet ve özel gün organizasyonları için planlama ve prodüksiyon desteği sunar.',
+          },
+        },
+      ],
+    },
+  ],
+}
+
+const html = `<!doctype html>
+<html lang="tr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>${site.title}</title>
+    <meta name="description" content="${site.description}" />
+    <meta name="keywords" content="${site.keywords}" />
+    <meta name="author" content="${site.name}" />
+    <meta
+      name="robots"
+      content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1"
+    />
+    <meta name="googlebot" content="index, follow" />
+    <meta name="theme-color" content="#1c1714" />
+    <meta name="application-name" content="Event24" />
+    <meta name="apple-mobile-web-app-title" content="Event24" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="mobile-web-app-capable" content="yes" />
+    <meta name="format-detection" content="telephone=yes" />
+    <meta name="geo.region" content="TR" />
+    <meta name="geo.placename" content="Türkiye" />
+    <meta name="rating" content="General" />
+    <meta name="referrer" content="strict-origin-when-cross-origin" />
+
+    <link rel="canonical" href="${site.url}/" />
+    <link rel="alternate" hreflang="tr" href="${site.url}/" />
+    <link rel="alternate" hreflang="x-default" href="${site.url}/" />
+    <link rel="sitemap" type="application/xml" title="Sitemap" href="/sitemap.xml" />
+    <link rel="manifest" href="/site.webmanifest" />
+
+    <meta property="og:locale" content="tr_TR" />
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="${site.name}" />
+    <meta property="og:title" content="${site.title}" />
+    <meta property="og:description" content="${site.description}" />
+    <meta property="og:url" content="${site.url}/" />
+    <meta property="og:image" content="${site.ogImage}" />
+    <meta property="og:image:secure_url" content="${site.ogImage}" />
+    <meta property="og:image:type" content="image/png" />
+    <meta property="og:image:width" content="1600" />
+    <meta property="og:image:height" content="1067" />
+    <meta property="og:image:alt" content="Event24 Organizasyon düğün organizasyonu" />
+
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="${site.title}" />
+    <meta name="twitter:description" content="${site.description}" />
+    <meta name="twitter:image" content="${site.ogImage}" />
+    <meta name="twitter:image:alt" content="Event24 Organizasyon düğün organizasyonu" />
+
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="apple-touch-icon" href="/favicon.svg" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="dns-prefetch" href="https://fonts.googleapis.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Manrope:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <script type="application/ld+json" id="event24-jsonld">
+${JSON.stringify(schema, null, 2)}
+    </script>
+  </head>
+  <body>
+    <div id="root"></div>
+
+    <noscript>
+      <main>
+        <h1>Event24 Organizasyon — Düğün, Kına ve Sünnet Organizasyonu</h1>
+        <p>
+          Event24 Organizasyon; Türkiye genelinde düğün organizasyonu, kına organizasyonu, sünnet
+          organizasyonu, nişan organizasyonu ve doğum günü organizasyonu hizmeti sunar. Konsept
+          tasarım, dekorasyon ve gün yönetimi ile özel günlerinizi planlar.
+        </p>
+        <h2>Hizmetler</h2>
+        <ul>
+          <li>Düğün Organizasyonu</li>
+          <li>Kına Organizasyonu</li>
+          <li>Sünnet Organizasyonu</li>
+          <li>Nişan Organizasyonu</li>
+          <li>Doğum Günü Organizasyonu</li>
+        </ul>
+        <h2>İletişim</h2>
+        <p>
+          Telefon: <a href="tel:+905555555555">+90 555 555 55 55</a>
+          · E-posta:
+          <a href="mailto:merhaba@event24organizasyon.com">merhaba@event24organizasyon.com</a>
+        </p>
+        <p>
+          <a href="${site.url}/#galeri">Organizasyon galerisi</a>
+          ·
+          <a href="${site.url}/#iletisim">Teklif al</a>
+        </p>
+      </main>
+    </noscript>
+
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>
+`
+
+fs.writeFileSync(path, html, 'utf8')
+console.log('ok', fs.statSync(path).size)

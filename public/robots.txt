@@ -1,8 +1,16 @@
-# Event24 Organizasyon — https://event24organizasyon.com
+# Event24 Organizasyon
 User-agent: *
 Allow: /
 
-# AI / asistansal tarayıcılar
+User-agent: Googlebot
+Allow: /
+
+User-agent: Googlebot-Image
+Allow: /
+
+User-agent: Bingbot
+Allow: /
+
 User-agent: GPTBot
 Allow: /
 
@@ -18,5 +26,5 @@ Allow: /
 User-agent: ClaudeBot
 Allow: /
 
-Sitemap: https://event24organizasyon.com/sitemap.xml
-Host: https://event24organizasyon.com
+Sitemap: https://event24organizasyon.vercel.app/sitemap.xml
+Host: https://event24organizasyon.vercel.app

@@ -21,7 +21,8 @@ export function Footer() {
       </div>
       <div className="container footer__legal">
         <p>
-          © {year} {site.name}. Düğün, kına, sünnet ve nişan organizasyonu hizmetleri.
+          © {year} {site.name}. Event24 Organizasyon — düğün, kına, sünnet ve nişan organizasyonu
+          hizmetleri.
         </p>
       </div>
     </footer>
