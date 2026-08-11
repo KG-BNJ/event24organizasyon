@@ -12,7 +12,6 @@ import { Approach } from './components/Approach'
 import { Faq } from './components/Faq'
 import { Contact } from './components/Contact'
 import { Footer } from './components/Footer'
-import { Closing } from './components/Closing'
 
 function App() {
   const [booting, setBooting] = useState(true)
@@ -48,12 +47,10 @@ function App() {
           <Gallery />
           <Services />
           <Approach />
-          <Closing>
-            <Contact />
-            <Faq />
-            <Footer />
-          </Closing>
+          <Contact />
+          <Faq />
         </main>
+        <Footer />
       </div>
     </>
   )

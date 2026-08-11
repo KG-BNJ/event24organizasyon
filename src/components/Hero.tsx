@@ -2,8 +2,7 @@ import { motion, useReducedMotion, useScroll, useTransform } from 'framer-motion
 import { useRef } from 'react'
 import './Hero.css'
 
-const heroImage =
-  'https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=2200&q=85'
+const heroImage = '/hero-couple.png'
 
 type HeroProps = {
   ready?: boolean
